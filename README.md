@@ -1,8 +1,8 @@
 ## Catalog
 * src> main > java: main class
-* resources > PDF > before: save the pdf uploaded by admin.
-* resources > PDF > after: save the pdf downloaded by clerk.
-* resources > PDF > after: save the pdf form info submit by clerk.
+* resources > PDF > step1: save the pdf uploaded by admin.
+* resources > PDF > step2: save the pdf downloaded by clerk.
+* resources > PDF > step3: save the pdf form info submit by clerk.
 
 ## Description
 * open the project folder with Intellij IDEA
