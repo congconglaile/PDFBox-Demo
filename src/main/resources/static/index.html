@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDFBox Demo</title>
+</head>
+<body>
+<h2>PDFBox Demo</h2>
+
+<h3>Step1 Admin Upload the PDF(PDF form document created by Admin)</h3>
+<form enctype="multipart/form-data" method="post" name="fileForm">
+    <label>Upload PDF： </label>
+    <input type="file" name="file" required/>
+    <input type="submit" value="upload" style="width: 80px;height: 30px;"/>
+    <p style="color: #FF5962;">( The maximum permitted size is 1048576 bytes )</p>
+</form>
+
+<h3>Step2 Clerk Download the PDF(patient name pre-populated)</h3>
+<a id="download" href="http://localhost:8080/pdfBox/download">Download PDF</a>
+</body>
+
+<script type="text/javascript">
+    var form = document.forms.namedItem("fileForm");
+    form.addEventListener('submit', function (ev) {
+        var oData = new FormData(form);
+        var oReq = new XMLHttpRequest();
+        oReq.open("POST", "http://localhost:8080/pdfBox/upload", true);
+        oReq.onload = function (data) {
+            if (oReq.status == 200) {
+                alert(data.target.responseText);
+            } else {
+                alert("Upload failed");
+            }
+        };
+        oReq.send(oData);
+        ev.preventDefault();
+    }, false);
+</script>
+</html>

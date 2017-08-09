@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+	main {
+		output.resourcesDir = "${buildDir}/classes/main"
+		output.classesDir = "${buildDir}/classes/main"
+	}
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'commons-io', name: 'commons-io', version: '2.5'
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.6'
+	compile group: 'com.lowagie', name: 'itext', version: '4.2.1'
+}
