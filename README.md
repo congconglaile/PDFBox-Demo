@@ -4,7 +4,7 @@
 * resources > PDF > step2: save the pdf downloaded by clerk.
 * resources > PDF > step3: save the pdf form info submit by clerk.
 
-## Description
+## Setup Instructions with Intellij IDEA
 * open the project folder with Intellij IDEA
 * gradle task: build > clean
 * gradle task: build > build
